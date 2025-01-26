@@ -10,7 +10,7 @@ if (!suppliedPublicKey) {
   throw new Error('Provide a public key to check the balance of!');
 }
 
-const connection = new Connection(clusterApiUrl('mainnet-beta'), 'confirmed');
+const connection = new Connection(clusterApiUrl('devnet'), 'confirmed');
 const publicKey = await resolvePublicKey(suppliedPublicKey);
 const balanceInLamports = await connection.getBalance(publicKey);
 const balanceInSol = balanceInLamports / LAMPORTS_PER_SOL;
